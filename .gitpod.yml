@@ -1,0 +1,9 @@
+image:
+  file: Dockerfile
+
+tasks:
+  - command: echo "Welcome to your Kali Linux Gitpod workspace!"
+
+ports:
+  - port: 8080
+    onOpen: open-preview
