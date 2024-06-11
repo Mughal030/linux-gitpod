@@ -1,17 +1,10 @@
-FROM kalilinux/kali-rolling
+FROM kalilinux/kali-linux-docker
 
-# Install necessary packages
-RUN apt-get update && apt-get install -y \
-    kali-linux-default \
-    kali-tools-top10 \
-    kali-linux-headless \
-    && apt-get clean
+# Install all Kali Linux tools
+RUN apt-get update && apt-get install -y kali-linux-all
 
-# Set the locale
-ENV LANG C.UTF-8
+# Set the default shell to bash
+ENV SHELL /bin/bash
 
-# Expose the port you want to use
-EXPOSE 8080
-
-# Start a default command
-CMD [ "bash" ]
+# Set the default command to run when the container starts
+CMD ["bash"]
